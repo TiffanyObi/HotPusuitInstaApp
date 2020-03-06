@@ -3,18 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2DCB3310521E9ED6DD3ADD3F /* Pods_HotPusuitInstaApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994F546C83B3534311B6C228 /* Pods_HotPusuitInstaApp.framework */; };
 		3EBB63792412D108001BE213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB63782412D108001BE213 /* AppDelegate.swift */; };
 		3EBB637B2412D108001BE213 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB637A2412D108001BE213 /* SceneDelegate.swift */; };
-		3EBB637D2412D108001BE213 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB637C2412D108001BE213 /* ViewController.swift */; };
+		3EBB637D2412D108001BE213 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB637C2412D108001BE213 /* LoginViewController.swift */; };
 		3EBB63802412D108001BE213 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB637E2412D108001BE213 /* Main.storyboard */; };
 		3EBB63822412D10D001BE213 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB63812412D10D001BE213 /* Assets.xcassets */; };
 		3EBB63852412D10D001BE213 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB63832412D10D001BE213 /* LaunchScreen.storyboard */; };
 		3EBB63902412D10D001BE213 /* HotPusuitInstaAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB638F2412D10D001BE213 /* HotPusuitInstaAppTests.swift */; };
+		3EBB63A62412E38D001BE213 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB63A52412E38D001BE213 /* AuthenticationSession.swift */; };
+		3EBB63A82412E8A3001BE213 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB63A72412E8A3001BE213 /* GoogleService-Info.plist */; };
+		3EBB63AA2412E961001BE213 /* LoginPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EBB63A92412E961001BE213 /* LoginPage.storyboard */; };
+		3EBB63AC2412F8FF001BE213 /* ViewController+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EBB63AB2412F8FF001BE213 /* ViewController+Navigation.swift */; };
 		D97D103D8D61FF3D783F6A16 /* Pods_HotPusuitInstaAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 957FBFF7CB8B55F004C916CD /* Pods_HotPusuitInstaAppTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +37,7 @@
 		3EBB63752412D108001BE213 /* HotPusuitInstaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotPusuitInstaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBB63782412D108001BE213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EBB637A2412D108001BE213 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3EBB637C2412D108001BE213 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3EBB637C2412D108001BE213 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3EBB637F2412D108001BE213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3EBB63812412D10D001BE213 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EBB63842412D10D001BE213 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +45,10 @@
 		3EBB638B2412D10D001BE213 /* HotPusuitInstaAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HotPusuitInstaAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EBB638F2412D10D001BE213 /* HotPusuitInstaAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotPusuitInstaAppTests.swift; sourceTree = "<group>"; };
 		3EBB63912412D10D001BE213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3EBB63A52412E38D001BE213 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
+		3EBB63A72412E8A3001BE213 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3EBB63A92412E961001BE213 /* LoginPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginPage.storyboard; sourceTree = "<group>"; };
+		3EBB63AB2412F8FF001BE213 /* ViewController+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Navigation.swift"; sourceTree = "<group>"; };
 		433232A68AC9CB3A82DDBCFB /* Pods-HotPusuitInstaAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPusuitInstaAppTests.debug.xcconfig"; path = "Target Support Files/Pods-HotPusuitInstaAppTests/Pods-HotPusuitInstaAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4F0271FE497AF53E78C3A245 /* Pods-HotPusuitInstaAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HotPusuitInstaAppTests.release.xcconfig"; path = "Target Support Files/Pods-HotPusuitInstaAppTests/Pods-HotPusuitInstaAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		957FBFF7CB8B55F004C916CD /* Pods_HotPusuitInstaAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HotPusuitInstaAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,7 +84,6 @@
 				433232A68AC9CB3A82DDBCFB /* Pods-HotPusuitInstaAppTests.debug.xcconfig */,
 				4F0271FE497AF53E78C3A245 /* Pods-HotPusuitInstaAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,13 +110,15 @@
 		3EBB63772412D108001BE213 /* HotPusuitInstaApp */ = {
 			isa = PBXGroup;
 			children = (
-				3EBB63782412D108001BE213 /* AppDelegate.swift */,
-				3EBB637A2412D108001BE213 /* SceneDelegate.swift */,
-				3EBB637C2412D108001BE213 /* ViewController.swift */,
-				3EBB637E2412D108001BE213 /* Main.storyboard */,
-				3EBB63812412D10D001BE213 /* Assets.xcassets */,
-				3EBB63832412D10D001BE213 /* LaunchScreen.storyboard */,
+				3EBB63A32412E2B2001BE213 /* Alerts + Extensions  */,
+				3EBB63A22412E293001BE213 /* Models */,
+				3EBB63A12412E27A001BE213 /* Firebase Services */,
+				3EBB63A02412E26F001BE213 /* Storyboards */,
+				3EBB639F2412E264001BE213 /* Views */,
+				3EBB639E2412E1EE001BE213 /* Controllers */,
+				3EBB63A42412E32E001BE213 /* Supporting Files */,
 				3EBB63862412D10D001BE213 /* Info.plist */,
+				3EBB63A72412E8A3001BE213 /* GoogleService-Info.plist */,
 			);
 			path = HotPusuitInstaApp;
 			sourceTree = "<group>";
@@ -121,6 +130,64 @@
 				3EBB63912412D10D001BE213 /* Info.plist */,
 			);
 			path = HotPusuitInstaAppTests;
+			sourceTree = "<group>";
+		};
+		3EBB639E2412E1EE001BE213 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3EBB637C2412D108001BE213 /* LoginViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3EBB639F2412E264001BE213 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3EBB63A02412E26F001BE213 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				3EBB637E2412D108001BE213 /* Main.storyboard */,
+				3EBB63832412D10D001BE213 /* LaunchScreen.storyboard */,
+				3EBB63A92412E961001BE213 /* LoginPage.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		3EBB63A12412E27A001BE213 /* Firebase Services */ = {
+			isa = PBXGroup;
+			children = (
+				3EBB63A52412E38D001BE213 /* AuthenticationSession.swift */,
+			);
+			path = "Firebase Services";
+			sourceTree = "<group>";
+		};
+		3EBB63A22412E293001BE213 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		3EBB63A32412E2B2001BE213 /* Alerts + Extensions  */ = {
+			isa = PBXGroup;
+			children = (
+				3EBB63AB2412F8FF001BE213 /* ViewController+Navigation.swift */,
+			);
+			path = "Alerts + Extensions ";
+			sourceTree = "<group>";
+		};
+		3EBB63A42412E32E001BE213 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EBB63782412D108001BE213 /* AppDelegate.swift */,
+				3EBB637A2412D108001BE213 /* SceneDelegate.swift */,
+				3EBB63812412D10D001BE213 /* Assets.xcassets */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		BCEDFA1697B6EC10B7555911 /* Frameworks */ = {
@@ -217,6 +284,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EBB63852412D10D001BE213 /* LaunchScreen.storyboard in Resources */,
+				3EBB63A82412E8A3001BE213 /* GoogleService-Info.plist in Resources */,
+				3EBB63AA2412E961001BE213 /* LoginPage.storyboard in Resources */,
 				3EBB63822412D10D001BE213 /* Assets.xcassets in Resources */,
 				3EBB63802412D108001BE213 /* Main.storyboard in Resources */,
 			);
@@ -300,8 +369,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EBB637D2412D108001BE213 /* ViewController.swift in Sources */,
+				3EBB637D2412D108001BE213 /* LoginViewController.swift in Sources */,
 				3EBB63792412D108001BE213 /* AppDelegate.swift in Sources */,
+				3EBB63AC2412F8FF001BE213 /* ViewController+Navigation.swift in Sources */,
+				3EBB63A62412E38D001BE213 /* AuthenticationSession.swift in Sources */,
 				3EBB637B2412D108001BE213 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

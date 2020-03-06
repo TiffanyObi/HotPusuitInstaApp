@@ -8,7 +8,7 @@ target 'HotPusuitInstaApp' do
   # Pods for HotPusuitInstaApp
 
 pod 'Firebase/Auth'
-  
+
   
 
  pod 'Firebase/Firestore'

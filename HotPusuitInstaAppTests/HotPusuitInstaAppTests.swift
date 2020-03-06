@@ -8,6 +8,7 @@
 
 import XCTest
 @testable import HotPusuitInstaApp
+import FirebaseAuth
 
 class HotPusuitInstaAppTests: XCTestCase {
 
