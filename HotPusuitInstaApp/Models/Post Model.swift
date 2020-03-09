@@ -16,7 +16,7 @@ struct Post {
     let userName: String
     let userID : String
     let postText: String?
-    let imageURL: String?
+    let imageURL: String
 }
 
 extension Post {

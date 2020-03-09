@@ -13,6 +13,7 @@ class NewsFeedCell: UICollectionViewCell {
     
     @IBOutlet weak var userNameLabel: UILabel!
     
+
     @IBOutlet weak var postImageView: UIImageView!
     
     @IBOutlet weak var postTextView: UITextView!
@@ -23,7 +24,7 @@ class NewsFeedCell: UICollectionViewCell {
         
         userNameLabel.text = "@\(details.userName)"
         
-        postImageView.kf.setImage(with: URL(string: details.imageURL ?? ""))
+        postImageView.kf.setImage(with: URL(string: details.imageURL))
         
         postTextView.text = details.postText
     }

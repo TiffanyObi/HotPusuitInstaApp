@@ -108,7 +108,7 @@ class LoginViewController: UIViewController {
     }
     
     private func navigateToMainView() {
-        UIViewController.showViewController(storyboardName: "Main", viewControllerID: "MainTabBarController")
+        UIViewController.showViewController(storyboardName: "Main", viewControllerID: "MainViewController")
     }
     
     private func clearErrorLabel() {
