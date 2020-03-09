@@ -33,13 +33,25 @@ class LoginViewController: UIViewController {
     private var accountState: AccountState = .existingUser
     private var authSession = AuthenticationSession()
     
-     var keyboardIsVisible = false
+    var keyboardIsVisible = false
+    
+    private lazy var tapGesture: UITapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer()
+        gesture.addTarget(self, action: #selector(keyboardWillHide(_:)))
+        return gesture
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         registerForKeyboardNotifications()
         messageLabel.isHidden = true
+        view.addGestureRecognizer(tapGesture)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(true)
+            unregisterForKeyboardNotifications()
+        }
     
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
@@ -109,65 +121,67 @@ class LoginViewController: UIViewController {
         
         
         if accountState == .existingUser {
-           
-               loginButton.setTitle("LOGIN", for: .normal)
-                messageLabel.text = "Don't have an account ? Click"
-              signUpButton.setTitle("Sign Up", for: .normal)
+            
+            loginButton.setTitle("LOGIN", for: .normal)
+            messageLabel.text = "Don't have an account ? Click"
+            signUpButton.setTitle("Sign Up", for: .normal)
         } else {
             
-               loginButton.setTitle("SIGN UP", for: .normal)
-               messageLabel.text = "Already have an account ?"
-                signUpButton.setTitle("Login", for: .normal)
-           
+            loginButton.setTitle("SIGN UP", for: .normal)
+            messageLabel.text = "Already have an account ?"
+            signUpButton.setTitle("Login", for: .normal)
+            
         }
     }
     
     private func registerForKeyboardNotifications() {
-      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-      
-      NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    private func unregisterForKeyboardNofications() {
-      NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-      NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    private func unregisterForKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc private func keyboardWillShow(_ notification: NSNotification) {
-      print("keyboardWillShow")
-          
-      guard let keyboardFrame = notification.userInfo?["UIKeyboardFrameBeginUserInfoKey"] as? CGRect else {
-        return
-      }
+        print("keyboardWillShow")
+        
+        guard let keyboardFrame = notification.userInfo?["UIKeyboardFrameBeginUserInfoKey"] as? CGRect else {
+            return
+        }
         
         
         moveKeyboardUp(keyboardFrame.size.height)
     }
     
     @objc private func keyboardWillHide(_ notification: NSNotification) {
-   resetUI()
+        emailTextField.resignFirstResponder()
+        passwordTextfield.resignFirstResponder()
+        resetUI()
     }
-
+    
     func moveKeyboardUp(_ height: CGFloat) {
-            if keyboardIsVisible {return}
+        if keyboardIsVisible {return}
         constraint = centerYConstraint
-            centerYConstraint.constant -= (height - 75)
-
-             UIView.animate(withDuration: 1.0, delay: 0.2, options: .curveEaseIn, animations: {
-                self.view.layoutIfNeeded()
-            }, completion: nil)
-            keyboardIsVisible = true
-        }
-
+        centerYConstraint.constant -= (height+40)
+        
+        UIView.animate(withDuration: 1.0, delay: 0.2, options: .curveEaseIn, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        keyboardIsVisible = true
+    }
     
-         func resetUI() {
-
     
-             centerYConstraint.constant -= constraint.constant
-
-             keyboardIsVisible = false
-        }
-
-
+    func resetUI() {
+        
+        
+        centerYConstraint.constant -= (constraint.constant-120)
+        
+        keyboardIsVisible = false
+    }
+    
+    
 }
 
