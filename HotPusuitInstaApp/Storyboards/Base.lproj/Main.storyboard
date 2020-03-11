@@ -186,7 +186,7 @@
                     <tabBarItem key="tabBarItem" title="" image="plus.rectangle.fill" catalog="system" id="C64-C6-PYA"/>
                     <connections>
                         <outlet property="captionTextField" destination="bO4-Xk-mBa" id="a9c-Ev-KBf"/>
-                        <outlet property="centerYConstraint" destination="aR6-Mu-QHv" id="e3s-BA-ZqY"/>
+                        <outlet property="centerYConstraint" destination="aR6-Mu-QHv" id="L5U-mT-B57"/>
                         <outlet property="createPostImageView" destination="rpG-08-gQA" id="4Vn-9e-CjR"/>
                         <outlet property="doneButton" destination="UAs-1u-iJP" id="wFE-uW-lWq"/>
                     </connections>

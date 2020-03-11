@@ -74,6 +74,7 @@ class LoginViewController: UIViewController {
                 switch result {
                 case .failure(let error):
                     DispatchQueue.main.async {
+                        self?.messageLabel.isHidden = false
                         self?.messageLabel.text = "\(error.localizedDescription)"
                         self?.messageLabel.textColor = .systemRed
                     }
@@ -81,6 +82,7 @@ class LoginViewController: UIViewController {
                 case .success:
                     DispatchQueue.main.async {
                         //navigate to main view
+                        self?.messageLabel.isHidden = true
                         self?.navigateToMainView()
                     }
                 }
@@ -93,12 +95,14 @@ class LoginViewController: UIViewController {
                 switch result {
                 case .failure(let error):
                     DispatchQueue.main.async {
+                        self?.messageLabel.isHidden = false
                         self?.messageLabel.text = "\(error.localizedDescription)"
                         self?.messageLabel.textColor = .systemRed
                     }
                     
                 case .success:
                     DispatchQueue.main.async {
+                        self?.messageLabel.isHidden = true
                         self?.navigateToMainView()
                     }
                 }
@@ -121,12 +125,12 @@ class LoginViewController: UIViewController {
         
         
         if accountState == .existingUser {
-            
+            messageLabel.isHidden = true
             loginButton.setTitle("LOGIN", for: .normal)
             messageLabel.text = "Don't have an account ? Click"
             signUpButton.setTitle("Sign Up", for: .normal)
         } else {
-            
+             messageLabel.isHidden = true
             loginButton.setTitle("SIGN UP", for: .normal)
             messageLabel.text = "Already have an account ?"
             signUpButton.setTitle("Login", for: .normal)

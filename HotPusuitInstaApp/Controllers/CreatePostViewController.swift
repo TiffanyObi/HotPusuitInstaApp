@@ -21,7 +21,9 @@ class CreatePostViewController: UIViewController {
     @IBOutlet weak var captionTextField: UITextField!
     
     @IBOutlet weak var centerYConstraint: NSLayoutConstraint!
+    
     private var constraint: NSLayoutConstraint!
+    
     private var keyboardIsVisible = false
     
     
@@ -56,10 +58,15 @@ class CreatePostViewController: UIViewController {
         return gesture
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+         registerForKeyboardNotifications()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addGestureRecognizer(tapGesture)
+       
         doneButton.isHidden = true
         createPostImageView.isUserInteractionEnabled = true
         createPostImageView.addGestureRecognizer(longPressGesture)
@@ -99,9 +106,6 @@ class CreatePostViewController: UIViewController {
         
     }
     
-//    @objc private func dismissKeyboard() {
-//        captionTextField.resignFirstResponder()
-//    }
     
     @objc private func showPhotoOptions() {
         let alertController = UIAlertController(title: "Choose Photo", message: nil, preferredStyle: .actionSheet)
@@ -188,7 +192,7 @@ class CreatePostViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(_ notification: NSNotification) {
-          captionTextField.resignFirstResponder()
+        
         resetUI()
     }
     
@@ -196,7 +200,7 @@ class CreatePostViewController: UIViewController {
         if keyboardIsVisible {return}
         constraint = centerYConstraint
         
-        centerYConstraint.constant -= (height+40)
+        centerYConstraint.constant -= (height)
         
         UIView.animate(withDuration: 1.0, delay: 0.2, options: .curveEaseIn, animations: {
             self.view.layoutIfNeeded()
@@ -208,7 +212,7 @@ class CreatePostViewController: UIViewController {
     func resetUI() {
         
         centerYConstraint.constant -= (constraint.constant)
-        
+        captionTextField.resignFirstResponder()
         keyboardIsVisible = false
     }
         
